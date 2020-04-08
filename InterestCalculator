@@ -1,0 +1,25 @@
+const data = [{principal: 2500, time: 1.8}, {principal: 1000 , time: 5}, {principal: 3000 , time: 1}, {principal: 2000 , time: 3}]
+function interestCalculator (arrayOfData) {
+    const interestData = []
+    for (const element of arrayOfData) {
+        const elementResult = {}
+        if (element.principal >= 2500 && element.time <= 2 && element.time >= 1) {
+            elementResult.rate = 3
+        }
+        else if (element.principal >= 2500 && element.time >= 3){
+            elementResult.rate = 4
+        }
+        else if (element.principal < 2500 && element.time <= 1){
+            elementResult.rate = 2
+        }
+        else elementResult.rate = 1
+        elementResult.principal = element.principal
+        elementResult.time = element.time
+        elementInterest = (element.principal * element.time * elementResult.rate) / 100
+        elementResult.interest = elementInterest
+        interestData.push(elementResult)        
+    }
+    console.log(interestData)
+    return interestData
+}
+interestCalculator(data)
